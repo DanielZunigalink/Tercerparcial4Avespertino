@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="footer.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/zig" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  <title>cuestionario</title>
+</head>
+<body>
+  <div style="margin: 24px;">
+    <nav class="navbar navbar-light" style="background-color: #c72424;">
+        <div class="container">
+          <ul class="nav navbar-nav">
+                <li>
+                    <li class="active">
+                    <a href="index.html">inicio</a>
+                </li>
+                <li>
+                    <a href="menu.html">menu</a>
+                </li>
+                <li>
+                    <a href="pedido.html">pedido</a>
+                </li>
+                <li>
+                    <a href="contacto.html">contacto</a>
+                </li>
+                <li>
+                    <a href="calculadorafisica.html">caculadora Fisica</a>
+                </li>
+                <li>
+<a href="apimovies.html">movies</a>
+                </li>
+                <li>
+                  <a href="cuestionario.html">cuestionario</a>
+                </li>
+                <li>
+                  <a href="calculadora.html">calculadora</a>
+                </li>
+            </ul>
+        </div>
+     </nav>
+</div>
+
+
+<div class="container">
+  <div class="quiz-container" id="quiz">
+    <div class="quiz-header">
+      <div class="image-container">
+        <img src="imagen.jpg" alt="imagen" id="question-image" style="width: 250px; height:auto;">
+      </div>
+      <h2 id="question">Question text </h2>
+      <ul>
+        <li>
+          <input type="radio" name="answer" id="a" class="answer">
+          <label for="a" id="a_text">Question</label>
+        </li>
+                <li>
+          <input type="radio" name="answer" id="b" class="answer">
+          <label for="b" id="b_text">Question</label>
+        </li>
+                <li>
+          <input type="radio" name="answer" id="c" class="answer">
+          <label for="c" id="c_text">Question</label>
+        </li>
+                <li>
+          <input type="radio" name="answer" id="d" class="answer">
+          <label for="d" id="d_text">Question</label>
+        </li>
+      </ul>
+    </div>
+    <button id="submit">siguiente</button>
+  </div>
+</div>
+<style>
+  body{
+    align-items: center;
+    justify-content: center;
+    overflow: 0;
+    margin: 0;
+  }
+  .quiz-container{
+background-color :white;
+background-image: linear-gradient(315deg,#b8c6db 0%, #031fc2 100%);
+border-radius:10px;
+box-shadow: 0 10px 20px 2px rgb(133 37 244);
+width:"400px";
+overflow: hidden;
+  }
+  .quiz-header{
+    padding: 15px;
+  }
+  h2{
+    padding:10px;
+    text-align: center;
+    margin: 0;
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+  }
+  ul li{
+    font-size: 18px;
+    margin: 10px 0;
+  }
+ul li label{
+  cursor: pointer;
+}
+button{
+  background-color: #031fc2;
+  color: white;
+  border: none;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+button:hover{
+  background-color: rgb(2, 182, 71);
+}
+button:focus{
+  outline: none;
+  background-color: rgb(8, 184, 228);
+}
+</style>
+<script>
+  const quizData = [
+    {
+      question: "quien gana en una pelea de los siguientes personajes?",
+      image:"quiz1.jpg",
+      a: "Superman",
+      b:"goku",
+      c:"Batman",
+      d:"Dios",
+      correct:"d",
+    },
+    {
+      question: "como se llama?",
+      image:"quiz2.jpg",
+      a: "link",
+      b:"zelda",
+      c:"gandorft",
+      d:"mario",
+      correct:"a",
+    },
+    {
+      question: "quien es el?",
+      image:"quiz3.jpg",
+      a: "sonic",
+      b:"duende",
+      c:"mario",
+      d:"animal",
+      correct:"a",
+    },
+    {
+      question: "como se llama?",
+      image:"quiz4.jpg",
+      a: "zelda",
+      b:"peach",
+      c:"rosalina",
+      d:"Deisy",
+      correct:"a",
+    },
+    {
+      question: "que instrumento es?",
+      image:"quiz5.jpg",
+      a: "flauta",
+      b:"ocarina",
+      c:"tambor",
+      d:"arpa",
+      correct:"b",
+    },
+    {
+      question: "que vandera es?",
+      image:"quiz6.jpg",
+      a: "mexico",
+      b:"japon",
+      c:"china",
+      d:"rusia",
+      correct:"b",
+    },
+    {
+      question: " donde salio el jefe maestro?",
+      image:"quiz7.jpg",
+      a: "nintendo",
+      b:"sega",
+      c:"xbox",
+      d:"psp",
+      correct:"c",
+    },
+    {
+      question: " que es esto?",
+      image:"quiz8.jpg",
+      a: "trifuerza",
+      b:"poder",
+      c:"alma",
+      d:"maldad",
+      correct:"a",
+    },
+    {
+      question: "cual juego mas de esta consolas?",
+      image:"quiz9.jpg",
+      a: "mario",
+      b:"zelda ocarina",
+      c:"star fox",
+      d:"turok",
+      correct:"b",
+    },
+    {
+      question: " cual es mi juego favorito? de esta consolas",
+      image:"quiz10.jpg",
+      a: "halo",
+      b:"dragoball",
+      c:"capcom vs marvel 3",
+      d:"sonic",
+      correct:"a",
+    },
+    {
+      question: "cual es mi postre favorito",
+      image:"quiz11.jpg",
+      a: "pastel",
+      b:"nieve",
+      c:"flan",
+      d:"carlota",
+      correct:"d",
+    },
+    {
+      question: "de que pais es este lugar?",
+      image:"quiz13.jpg",
+      a: "japon",
+      b:"corea",
+      c:"china",
+      d:"mexico",
+      correct:"a",
+    },
+    {
+      question: "que tipo de musica escucho mas?",
+      image:"quiz12.jpg",
+      a: "triste",
+      b:"rock",
+      c:"pop",
+      d:"todas",
+      correct:"d",
+    },
+    {
+      question: " cual es mi clima favorito",
+      image:"quiz14.jpg",
+      a: "calor",
+      b:"frio",
+      c:"fresco",
+      d:"lluvia",
+      correct:"d",
+    },
+    {
+      question: "que materia me gusta mas",
+      image:"quiz15.jpg",
+      a: "matematicas",
+      b:"ingles",
+      c:"español",
+      d:"programacion",
+      correct:"d",
+    },
+    {
+      question: " que estado o pais me gustaria ir ",
+      image:"quiz16.jpg",
+      a: "japon",
+      b:"USA",
+      c:"chile",
+      d:"ciudad de mexico",
+      correct:"a",
+    },
+    {
+      queztion: " a que animal soy alergico",
+      image:"quiz17.jpg",
+      a: "gatos",
+      b:"perros",
+      c:"loros",
+      d:"cuyos",
+      correct:"a",
+    },
+    {
+      question: "a que le tengo miedo?",
+      image:"quiz18.jpg",
+      a: "arañas",
+      b:"cucarachas",
+      c:"mantis",
+      d:"todo",
+      correct:"d",
+    },
+    {
+      question: "cual es mi color favorito",
+      image:"quiz19.jpg",
+      a: "amarillo",
+      b:"negro",
+      c:"rojo",
+      d:"azul",
+      correct:"a",
+    },
+    {
+      question: "que materia no me gusta",
+      image:"quiz15.jpg",
+      a: "español",
+      b:"calculo",
+      c:"fisica",
+      d:"ingles",
+      correct:"c",
+    },
+    ];
+    const quiz = document.getElementById('quiz');
+    const answerEls=document.querySelectorAll('.answer');
+    const questionEl =document.getElementById('question');
+    //dependiendo del número de repuestas esto puede incrementar
+    const a_text=document.getElementById('a_text');
+    const b_text=document.getElementById('b_text');
+    const c_text=document.getElementById('c_text');
+    const d_text=document.getElementById('d_text');
+const submitBtn=document.getElementById('submit');
+let currentQuiz=0; //esta variable nos va a servir para realizar el seguimiento de ma pregunta 
+let score= 0; // esta variable realiza el siguiente del puntaje del usuario
+
+loadQuiz(); //va a cargar la primera pregunta del cuestionario
+function loadQuiz(){
+  deselectAnswers();
+  const currentQuizData= quizData[currentQuiz];// obtuene los datos de la pregunta actual
+  
+  questionEl.innerText = currentQuizData.question; //muestra la pregunta actual en el elemento html correspondiente 
+  
+  a_text.innerText = currentQuizData.a; //muestra la opción de la respuesta A en el elemento html correspondiente 
+  
+  b_text.innerText = currentQuizData.b; //muestra la opción de la respuesta B en el elemento html correspondiente 
+  
+  c_text.innerText = currentQuizData.c; //muestra la opción de la respuesta C en el elemento html correspondiente
+  
+ d_text.innerText = currentQuizData.d; //muestra la opción de la respuesta D en el elemento html correspondiente 
+ const questionImage = document.getElementById("question-image");
+ questionImage.src=currentQuizData.image;
+}
+function deselectAnswers(){
+  answerEls.forEach(answerEl => answerEl.checked= false); //desenmarca todas las casillas de verificación de respuesta.
+}
+function getSelected(){
+  let answer;
+  answerEls.forEach(answerEl => {
+    if(answerEl.checked){
+      answer = answerEl.id; //en esta parte obtienes ms opcion de la respuesta selecgionafs por el usuario 
+    }
+  });
+  return answer; //devuelve la opción de la respuesta seccionsda.
+}
+submitBtn.addEventListener('click',() =>{
+  const answer = getSelected(); //obtiene la opcion del a respuesta selecionada por el usuario 
+  if (answer){
+  if(answer === quizData[currentQuiz].correct){
+    score++; //incrementara el puntaje de las respuestas correctas 
+  }
+  currentQuiz++; //incrementa
+  if(currentQuiz < quizData.length){
+    loadQuiz();
+  } else{
+    quiz.innerHTML=`
+    <h2>Constestaste ${score}/${quizData.length} de preguntas correctamente </h2>
+    
+    <button onclick="location.reload()">Reload</button>
+    `
+  }
+  }
+})
+</script>
+
+    <footer>
+      <center>
+        <footer>
+          <div class="copyrigth">
+              <p>&copy;<span id="year">Derechos reservados.</span></p>
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <h2><a href="perfil.html">contáctame</a></h2>
+              <p>Si estas interesado en contactarme, puedes hacerlo a travez de cualquiera de las siguientes redes sociales.</p>
+              <p>Podras contactarme en cualquiera de estas apps:</p>
+              <p>Agregando solo un poco mas de informacion para que el texto se vea mucho mas ya que no se que mas agregarle...</p>
+              <div class="contact-links">
+            <a href="./miperfil"target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="http://www.instagram.com/miperfil" 
+            target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="http://www.twitter.com/miperfil" 
+            target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="http://www.discord.com/miperfil" 
+            target="_blank"><i class="fab fa-discord"></i></a>
+            <a href="http://www.pinterest.com/miperfil" 
+            target="_blank"><i class="fab fa-pinterest"></i></a>
+            <a href="http://www.linkedin.com/miperfil" 
+            target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+               
+        
+        
+        <script>
+        //este siguiente codigo es para que los enlaces se abran en una nueva pestaña
+        const redessociales= document.querySelectorAll('.contact-links');
+        redessociales.forEach(link =>{
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                window.open(link.href, '_blank');
+            });
+        });
+        
+                     
+              
+         </script>
+        </footer>
+        </center>
+        <style>
+        body{
+        background-color: rgb(0, 0, 0);
+        color:white;
+        font-family: 'Zig', sans-serif;
+                                                
+        }
+        div{
+        position: relative;
+        }
+        video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+        .titulo{
+        font-family: 'Zig', sans-serif;
+        background: black;
+        font-size: 150px;
+        text-align: center;
+        font-weight: 200;
+        mix-blend-mode: multiply;
+        }
+          </style>
+        <script>
+        const redessociales= document.querySelectorAll('.contact-links');
+        redessociales.forEach(link =>{
+        link.addEventListener('click', e=>{
+        e.preventDefault();
+        window.open(link.href, '_blank');
+        });
+        });
+        </script>
+        
+ </footer>
+ 
+</body>
+</html>
